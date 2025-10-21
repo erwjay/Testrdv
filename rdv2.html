@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Ratassya 💖</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+    .slide {
+      position: absolute;
+      width: 80%;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 0.6em;
+      animation: fadeInDown 1s ease;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+      animation: fadeInUp 1.2s ease;
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: rgba(255,255,255,0.8);
+    }
+    button {
+      position: absolute;
+      bottom: 60px;
+      background: rgba(255, 255, 255, 0.3);
+      border: none;
+      color: white;
+      font-size: 1em;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: 0.3s;
+    }
+    button:hover {
+      background: rgba(255,255,255,0.5);
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide active">
+    <h1>Hai, Ratassya 🌸</h1>
+    <p>Kau tahu? Dunia ini terasa lebih hangat,<br>
+    setiap kali namamu terlintas dalam do’a.</p>
+  </div>
+  <div class="slide">
+    <h1>Langit pun Menyapa</h1>
+    <p>Ada lembut angin yang membawa pesan,<br>
+    bahwa kamu pantas bahagia tanpa alasan,<br>
+    cukup karena kamu adalah anugerah.</p>
+  </div>
+  <div class="slide">
+    <h1>Jangan Pernah Meragukan Cahaya</h1>
+    <p>Bahkan ketika langit tampak mendung,<br>
+    sinar mentari tetap ada di baliknya,<br>
+    menunggu waktu terbaik untuk menyapa lagi.</p>
+  </div>
+  <div class="slide">
+    <h1>Dan Jika Hatimu Lelah</h1>
+    <p>Beristirahatlah,<br>
+    Bersandarlah kepada Allah,<br>
+    Dan Lelahmu akan hilang, lalu hatimu tenang.</p>
+  </div>
+  <div class="slide">
+    <h1>🌷 Do’a untukmu</h1>
+    <p>Semoga Allah selalu melindungimu,<br>
+    menenangkan hatimu, dan memudahkan setiap langkahmu.<br>
+    Aamiin 🤍</p>
+  </div>
+
+  <footer>Untuk Ratassya Jenar Mahessa Ayu 💖</footer>
+  <button id="playBtn">Putar Musik 🎵</button>
+
+  <audio id="bgMusic" loop>
+	<source src="https://raw.githubusercontent.com/naptha/tunes/master/ambient/ambient1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const music = document.getElementById('bgMusic');
+    const playBtn = document.getElementById('playBtn');
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 6000);
+
+    playBtn.addEventListener('click', () => {
+      music.play();
+      playBtn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
