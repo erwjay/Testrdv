@@ -105,38 +105,6 @@
     Aamiin 🤍</p>
   </div>
 
-  <footer>Untuk Ratassya Jenar Mahessa Ayu 💖</footer>
-	<audio id="bgMusic" preload="auto" loop>
-	  <source src="https://archive.org/download/PianoRelaxation/PianoRelaxation.mp3" type="audio/mpeg">
-	</audio>
-	
-	<button id="playBtn">Putar Musik 🎵</button>
-	
- <script>
-	  const music = document.getElementById("bgMusic");
-	  const playBtn = document.getElementById("playBtn");
-	
-	  // fungsi play dengan handling error
-	  function playMusic() {
-	    music.play().then(() => {
-	      console.log("Musik dimulai 🎶");
-	      playBtn.style.display = "none";
-	    }).catch(err => {
-	      console.log("Gagal play:", err);
-	      alert("Klik lagi ya, Ratassya 🌸 (browser belum izinkan suara)");
-	    });
-	  }
-	
-	  // klik tombol play
-	  playBtn.addEventListener("click", playMusic);
-	
-	  // cadangan: klik area mana pun di layar juga bisa memulai musik
-	  document.body.addEventListener("click", () => {
-	    if (music.paused) playMusic();
-	  }, { once: true });
-</script>
-
-
   <script>
     const slides = document.querySelectorAll('.slide');
     const music = document.getElementById('bgMusic');
@@ -156,5 +124,6 @@
   </script>
 </body>
 </html>
+
 
 
